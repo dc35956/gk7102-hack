@@ -23,14 +23,14 @@ This hack is for various Chinese Goke GK7102 based IP Cameras. There are few dif
 
 ## Features
 
-* Blocked cloud hosts
+* Blocking cloud hosts
 * New version of BusyBox v1.26.2
 * Configurable settings
-* FTP Server
-* dropbear SSH Server
-* WebUI PTZ - (http://IPAddress:8080/cgi-bin/webui)
-* More debug and diagnostics tools: [static-binaries](https://github.com/andrew-d/static-binaries)
-* Change login credentials to user: root password: cxlinux
+* BusyBox FTP Server
+* dropbear SSH Server: root can login ssh without password
+* WebUI PTZ - (http://192.168.200.1:8080/cgi-bin/webui)
+* Debug and diagnostics tools: [andrew-d/static-binaries](https://github.com/andrew-d/static-binaries/tree/master/binaries/linux/arm)
+* Change login credentials to ```user: root password: cxlinux```
 * Improved terminal experience
 * Wi-Fi configuration without cloud account
 
@@ -42,21 +42,28 @@ Current version works only from microSD card and do not require installation. It
 * Download the hack
 * Copy contents of folder ```sdcard``` to the main directory of a vfat/fat32 formatted microSD card
 * Change options in ```config.txt```
-* Insert microSD card into camera and boot
+* Insert microSD card into camera and reboot the device
 * Enjoy
 
 
 ## Security
 
+The security of these devices is terrible.
+* DO NOT expose these cameras to the internet.
+* config.txt is used to decide what servers to run.
+* This hack is blocking the communication with the cloud providers /media/hack/etc/hosts.
+* Some cameras are trying to talk with 30.108.91.227
+* tcpdump binary is included with this hack on /media/hack/bin/tcpdump
+* DO NOT expose these cameras to the internet.
 
 
 ## Instructions
 
 ### How to check version
 
-* If you have already configured the camera with the cloud app there should be some info within the app showing firmware version.
 * Using an onvif tool/app like Onvifer (Android) should give firmware version.
 * You should also be able to find the firmware version by logging in via telnet and excuting the command
+* If you have already configured the camera with the cloud app there should be some info within the app showing firmware version.
 ```
 ls /tmp | grep -F 3. or ls /tmp | head -1
 ```
@@ -290,7 +297,7 @@ return_server_ip=relaycn.closeli.cn
 
 * [The BusyBox project](https://busybox.net/)
 
-* [tcpdump - ARM Binary](https://github.com/andrew-d/static-binaries/tree/master/binaries/linux/arm)
+* [ARM Binary andrew-d/static-binaries](https://github.com/andrew-d/static-binaries/tree/master/binaries/linux/arm)
 
 * [WiFi IP CloudCamer-ы: HIP291-1M/2M-AI, Digoo DG-W01F, Digoo DG-MYQ и другие на процессоре от GOKE: GK7102 (GK7102S)](https://4pda.ru/forum/index.php?showtopic=928641)
 
