@@ -1,0 +1,48 @@
+
+#####################################################################
+## Wi-Fi Settings
+
+HACK_WIFI=NO
+WIFI_SSID=your_wifi_ssid
+WIFI_PASSWORD=your_wifi_password
+
+
+#####################################################################
+## Servers
+
+# Busybox httpd for WebUI PTZ
+HACK_HTTPD=YES
+
+# SSH Server - user root with no password required
+HACK_SSH=YES
+
+# FTP Server
+HACK_FTP=YES
+
+# Telnet Server
+HACK_TELNET=YES
+
+
+#####################################################################
+## System Settings
+
+# Silence Voices
+# Possibly causes some cameras to fail, use at your own risk
+VOICE=NO
+
+# Block cloud services
+HACK_CLOUD=YES
+
+
+#####################################################################
+## Installation Settings - TODO
+# These setting are not used at the moment.
+# This version only works from SD Card!
+
+# Persistent hack
+# Write changes on disk, SD Card NOT required after hack is installed.
+# This option may require your device's root filesystem to be read/write mounted
+PERSISTENT=NO
+
+# System Restore
+RESTORE=NO
