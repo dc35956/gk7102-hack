@@ -1,4 +1,4 @@
-# Hack for Cheap Chineese Goke GK7102 Cloud IP Cameras
+# Hack for Cheap Chinese Goke GK7102 Cloud IP Cameras
 
 This hack is for various Chinese Goke GK7102 based IP Cameras. There are few different firmware varieties across various brands of cameras, which means it is impossible to know what exactly will work for you. Older firmware are more hackable because the root filesystem is mounted read/write. In the new firmwares the root filesystem is mounted read-only but the /home directory is writeable. This hack is based on (https://github.com/ant-thomas/zsgx1hacks)
 
@@ -52,7 +52,7 @@ The security of these devices is terrible.
 * DO NOT expose these cameras to the internet.
 * config.txt is used to decide what servers to run.
 * This hack is blocking the communication with the cloud providers, see /media/hack/etc/hosts.
-* The device was communicating with servers of icloseli.cn, icloseli.com and arcsoft.com file
+* The device was communicating with servers of icloseli.cn, icloseli.com and arcsoft.com
 * Some cameras are trying to talk with 30.108.91.227, even with the blocked hosts.
 * tcpdump binary is included with this hack on /media/hack/bin/tcpdump
 * DO NOT expose these cameras to the internet.
@@ -128,7 +128,7 @@ Model: VT-5122
 [V-Tac 1080P IP Indoor Camera ](https://www.v-tac.eu/products/smart-home/cameras/1080p-ip-indoor-camera-eu-power-plug-auto-track-function-detail.html)
 
 
-### Manufacturer
+### Wi-Fi Manufacturer
 
 MAC Address: 88:E6:28:xx:xx:xx - Shenzhen Kezhonglong Optoelectronic Technology Co.,Ltd
 Floor 3, Bldg. 5, Area B, Xinfu Industrial Park, Chongqing Rd., Baoan Dist,Shenzhen,Guangdong, China Shenzhen Guangdong CN 518103
@@ -271,7 +271,7 @@ sshd:x:103:99:Operator:/var:/bin/sh
 default:x:1000:1000:Default non-root user:/home/default:/bin/sh
 ```
 
-### cat /tmp/cloud.ini 
+### cat /home/cloud.ini 
 ```
 [SERVERINFO]
 server_name=arcsoft.com
