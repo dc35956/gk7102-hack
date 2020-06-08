@@ -51,8 +51,9 @@ Current version works only from microSD card and do not require installation. It
 The security of these devices is terrible.
 * DO NOT expose these cameras to the internet.
 * config.txt is used to decide what servers to run.
-* This hack is blocking the communication with the cloud providers /media/hack/etc/hosts.
-* Some cameras are trying to talk with 30.108.91.227
+* This hack is blocking the communication with the cloud providers, see /media/hack/etc/hosts.
+* The device was communicating with servers of icloseli.cn, icloseli.com and arcsoft.com file
+* Some cameras are trying to talk with 30.108.91.227, even with the blocked hosts.
 * tcpdump binary is included with this hack on /media/hack/bin/tcpdump
 * DO NOT expose these cameras to the internet.
 
@@ -111,6 +112,8 @@ passwd = your_wifi_password
 
 * [Security, RTSP, SSH, Video files to SD Card](https://github.com/ant-thomas/zsgx1hacks/pull/93/files)
 * [Logs and other useful ideas](https://github.com/ant-thomas/zsgx1hacks/pull/4/files)
+* [Original ant-thomas with Persistent hack](https://github.com/ant-thomas/zsgx1hacks)
+* [Read-only modular customizer by bolshevik](https://github.com/bolshevik/goke-GK7102-customizer)
 
 
 
