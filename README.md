@@ -50,11 +50,26 @@ Current version works only from microSD card and do not require installation. It
 
 The security of these devices is terrible.
 * DO NOT expose these cameras to the internet.
-* config.txt is used to decide what servers to run.
+* For this hack, config.txt is used to decide what servers you want to run.
 * This hack is blocking the communication with the cloud providers, see /media/hack/etc/hosts.
-* The device was communicating with servers of icloseli.cn, icloseli.com and arcsoft.com
-* Some cameras are trying to talk with 30.108.91.227, even with the blocked hosts.
+* By default the camera wants to use some app [YCC365 Plus](https://play.google.com/store/apps/details?id=com.ycc365plus.aws&hl=en)
 * tcpdump binary is included with this hack on /media/hack/bin/tcpdump
+* Logs in /tmp/closelicamera.log
+* The device was communicating with servers of icloseli.cn, icloseli.com and arcsoft.com
+* Some cameras are trying to use 30.108.91.227 and 47.104.139.168, even with the blocked hosts.
+```
+1970-01-01 12:39:32.251493 [4342] [APDirectConnect.cpp(136) bindUdpPort]Trace: Begin___
+1970-01-01 12:39:32.252391 [4342] [APDirectConnect.cpp(157) bindUdpPort]Trace: udp bind port-9999 success.
+1970-01-01 12:39:32.253287 [4342] [APDirectConnect.cpp(179) bindUdpPort]Trace: udp bind port-8888 success.
+1970-01-01 12:39:32.229498 [4311] [Common.cpp(378) ParseCloudIniFile]Trace: read inifile, stun_server_ip = stun.icloseli.cn.
+1970-01-01 12:39:32.257463 [4311] [Common.cpp(378) ParseCloudIniFile]Trace: read inifile, return_server_ip = relaycn.closeli.cn.
+1970-01-01 12:39:32.265895 [4311] [NetInterface.cpp(453) GetIpByHostName]Error: can not get (stun.icloseli.cn) ip addr!
+1970-01-01 12:39:32.267988 [4311] [P2PPlayback.cpp(913) Init]Trace: parse stun domain:stun.icloseli.cn, ret=0, ip=
+1970-01-01 12:39:32.273120 [4311] [NetInterface.cpp(453) GetIpByHostName]Error: can not get (relaycn.closeli.cn) ip addr!
+1970-01-01 12:39:32.274199 [4311] [P2PPlayback.cpp(918) Init]Trace: parse return domain:relaycn.closeli.cn, ret=0, ip=
+1970-01-01 12:39:32.275416 [4311] [P2PNew.cpp(926) SetServerAddr]Trace: stunserver:47.104.139.168:19302, turnserver:30.108.91.227:5000
+1970-01-01 12:39:32.276744 [4311] [P2PNew.cpp(53) P2PLogCb]Trace: ####p2p_log:M=CLP2P;V=c7ab521e;L=error;FC=createP2PClient;MSG=createP2PClient[No StunConfision] >>> build:[Nov 28 2018 16:31:52]
+```
 * DO NOT expose these cameras to the internet.
 
 
@@ -178,20 +193,21 @@ $ cat /home/hardinfo.bin
 
 ### Open ports
 ```
-$ nmap -sV 192.168.200.1
+$ nmap -p- 192.168.200.1
 Nmap scan report for _gateway (192.168.200.1)
-Host is up (0.015s latency).
-Not shown: 993 closed ports
-PORT     STATE SERVICE    VERSION
-23/tcp   open  telnet     BusyBox telnetd
-80/tcp   open  http       Ginatex-HTTPServer
+Host is up (0.018s latency).
+Not shown: 65525 closed ports
+PORT     STATE SERVICE
+23/tcp   open  telnet
+80/tcp   open  http
 554/tcp  open  rtsp
 843/tcp  open  unknown
-5050/tcp open  mmcc?
-7103/tcp open  tcpwrapped
-8001/tcp open  rtsp
-4 services unrecognized despite returning data.
-MAC Address: 88:E6:28:xx:xx:xx (Shenzhen Kezhonglong Optoelectronic Technology)
+3201/tcp open  cpq-tasksmart
+5050/tcp open  mmcc
+6670/tcp open  irc
+7101/tcp open  elcn
+7103/tcp open  unknown
+8001/tcp open  vcom-tunnel
 ```
 
 ### Processor
