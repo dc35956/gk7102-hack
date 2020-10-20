@@ -18,7 +18,8 @@ cat <<EOT
 <!DOCTYPE html>
 <html>
 <head>
-<title>zsgx1hacks UI</title>
+<title>Camera - WebUI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
     font-size: 100%;
@@ -66,7 +67,8 @@ Hack Type - $hacktype
 <br />
 <a href="https://github.com/ant-thomas/zsgx1hacks" target="_blank">ZS-GX1 Hacks - Github</a>
 
-</body></html>
+</body>
+</html>
 EOT
 
 if [ -f /home/HACKP ]; then
