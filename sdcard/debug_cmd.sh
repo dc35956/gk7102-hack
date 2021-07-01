@@ -2,13 +2,13 @@
 
 # mount sd card to separate location
 if [ -b /dev/mmcblk0p1 ]; then
-	mount -t vfat /dev/mmcblk0p1  /media
+	mount /dev/mmcblk0p1 /media
 elif [ -b /dev/mmcblk0 ]; then
-	mount -t vfat /dev/mmcblk0 /media
+	mount /dev/mmcblk0 /media
 fi
 
 # include config
-. /mnt/config.txt
+. /media/config.txt
 
 # confirm hack type
 touch /home/HACKSD
@@ -36,8 +36,8 @@ fi
 # Wi-Fi Settings
 if [ "$HACK_WIFI" = "YES" ]; then
     echo "[cls_server]" > cls.conf
-    echo $WIFI_SSID >> cls.conf
-    echo $WIFI_PASSWORD >> cls.conf
+    echo "ssid = $WIFI_SSID" >> cls.conf
+    echo "passwd = $WIFI_PASSWORD" >> cls.conf
 fi
 
 
