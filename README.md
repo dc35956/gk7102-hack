@@ -94,7 +94,11 @@ ls /tmp | grep -F 3. or ls /tmp | head -1
 ### RTSP Connection
 
 * rtsp://admin:@192.168.200.1:554
+* rtsp://admin:@192.168.200.1:554/0/av0 (with audio)
+* rtsp://admin:@192.168.200.1:554/0/av1 (low quality)
 * rtsp://admin:@192.168.200.1:8001
+* rtsp://admin:@192.168.200.1:8001/0/av0 (with audio)
+* rtsp://admin:@192.168.200.1:8001/0/av1 (low quality)
 
 
 ### Debug Scripts and Files
