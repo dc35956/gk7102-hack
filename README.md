@@ -130,7 +130,7 @@ passwd = your_wifi_password
 
 ### Date and time
 
-Camera loses the data and time setting when it loses power. The time is updated from a remote server.
+Camera loses the date and time setting when it loses power. The time is updated from a remote server.
 
 You can set your date and time manualy by `date --set`
 ```
