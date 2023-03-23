@@ -127,6 +127,24 @@ ssid = your_wifi_ssid
 passwd = your_wifi_password
 ```
 
+
+### Date and time
+
+Camera loses the data and time setting when it loses power. The time is updated from a remote server.
+
+You can set your date and time manualy by `date --set`
+```
+Recognized TIME formats:
+   hh:mm[:ss]
+   [YYYY.]MM.DD-hh:mm[:ss]
+   YYYY-MM-DD hh:mm[:ss]
+   [[[[[YY]YY]MM]DD]hh]mm[.ss]
+   'date TIME' form accepts MMDDhhmm[[YY]YY][.ss] instead
+```
+For example:
+`date --set="2023-03-23 16:10:00"`
+
+
 ### Tweaks
 
 * [Security, RTSP, SSH, Video files to SD Card](https://github.com/ant-thomas/zsgx1hacks/pull/93/files)
