@@ -7,12 +7,6 @@ date=`date`
 ipadd=`ip route get 1 | awk '{print $NF;exit}'`
 uptime=`uptime`
 
-if [ -f /home/HACKP ]; then
-hacktype="PERSISTENT"
-elif [ -f /home/HACKSD ]; then
-hacktype="SD CARD"
-fi
-
 
 cat <<EOT
 <!DOCTYPE html>
@@ -29,6 +23,8 @@ body {
 </head>
 <body>
 <div>
+<img id="snapshot" src="snapshot" />
+<br />
 <button onclick="window.location.href='webui'" id="home">Home</button>
 <br />
 <br />
@@ -62,10 +58,11 @@ Date - $date
 IP Address - $ipadd
 <br />
 Uptime - $uptime
-<br />
-Hack Type - $hacktype
-<br />
-<a href="https://github.com/ant-thomas/zsgx1hacks" target="_blank">ZS-GX1 Hacks - Github</a>
+
+
+<script>
+setInterval(function() { document.getElementById("snapshot").src = "snapshot?t=" + Math.random(); }, 1000);
+</script>
 
 </body>
 </html>
