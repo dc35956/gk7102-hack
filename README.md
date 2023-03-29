@@ -30,7 +30,7 @@ This hack is for various Chinese Goke GK7102 based IP Cameras. There are few dif
 * dropbear SSH Server: root can login ssh without password
 * WebUI PTZ - (http://192.168.200.1:8080/cgi-bin/webui)
 * Debug and diagnostics tools: [andrew-d/static-binaries](https://github.com/andrew-d/static-binaries/tree/master/binaries/linux/arm)
-* Change login credentials to ```user: root password: cxlinux```
+* Changes login credentials to ```user: root password: cxlinux```
 * Improved terminal experience
 * Wi-Fi configuration without cloud account
 
@@ -120,7 +120,7 @@ To run debug scripts create a file ```debug_cmd.sh``` on an SD card and you will
 
 ### Connect to Wi-fi network
 
-On the SD card, create the ```cls.conf``` file and write these 3 lines in it. Change your_wifi_ssid and your_wifi_password with your credentials.
+On the SD card, create the ```cls.conf``` file and write these 3 lines in it. Replace your_wifi_ssid and your_wifi_password with your credentials.
 ```
 [cls_server]
 ssid = your_wifi_ssid
@@ -143,6 +143,12 @@ Recognized TIME formats:
 ```
 For example:
 `date --set="2023-03-23 16:10:00"`
+
+
+### Disable the whitelight
+
+If you want to disable the whitelight you can edit `hwcfg.ini` and change support_doublelight from 2 to 1. Check [RussH007's comment](https://github.com/dc35956/gk7102-hack/issues/13) for more details.
+`support_doublelight = 1`
 
 
 ### Tweaks
